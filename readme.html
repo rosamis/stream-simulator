@@ -1,0 +1,99 @@
+<meta charset="utf-8"/>
+<style>
+    .text{
+        max-width: 80%;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    .recuo{
+        text-indent:4em;
+    }
+</style>
+<center><h1>Relatório do Trabalho de Redes II</h1></center>
+<center>
+<p><i>Roberta Samistraro Tomigian - GRR20171631<br>
+Matheus Yukio Lopes Shimazu - GRR20171625</i></p><br>
+</center>
+<div align="center">
+    <div class="text" align="justify"> 
+        <h3>1. Introdução</h3>
+        <p class="recuo">
+            O trabalho foi desenvolvido para fins da disciplina de Redes II ministrada pelo Profº Drº Elias P. Duarte Jr no primeiro semestre de 2019 na Universidade Federal do Paraná. 
+            Ele consiste em um serviço de streaming, no qual é possivel que vários clientes se inscrevam e recebam dados gerados pelo servidor. 
+            Foi escolhido fazer um stream que gera 6 Países pré-definidos e aleatoriza numeros. O numero representa a quantidade de crimes que ocorreram em um intervalo de tempo. 
+            O envio de mensagens será realizado via UDP/IP.
+        </p>
+        <h3>2. Desenvovimento</h3>
+        <p class="recuo">
+            Neste módulo estão descritos pontos importantes para o funcionamento e entendimento do programa.
+        </p>
+        <h4>2.1. Execução do Programa</h4>
+        <p class="recuo">
+            Para a execução do programa deve-se ter o Python3 instalado no computador. Tanto para o cliente quanto para o servidor deve-se executar o comando na pasta em que se encontra o arquivo.
+        No caso do servidor deve-se digitar: <i>python3 servidor.py</i>. E para o cliente deve-se digitar: <i>python3 cliente.py</i>
+
+        </p>
+        <h4>2.2. Interações com o Usuário</h4>
+        <p class="recuo">
+            O servidor deve ser executado antes do cliente. Ao iniciar ele, será solicitado que o usuário digite a porta em que o servidor irá receber mensagens de clientes. Em seguida, deve-se
+            informar o intervalo em milissegundos que serão enviadas as mensagens. Após isso, não há mais interações e o servidor executará até que feche o terminal. 
+        <p class="recuo">
+            Ao iniciar o cliente, o usuário deve informar o nome da máquina do servidor e a porta. Após isso, deve escolher um País dentre os mostrados no terminal. Em seguida, 
+            o programa irá rodar até que o usuário tecle Enter.
+        </p>
+        </p>
+        <h4>2.3. As mensagens</h4>  
+        <p class="recuo">Os envios de mensagens ocorrem nas seguintes situações:</p>
+        <blockquote> <blockquote><blockquote> <li>O cliente envia pacotes no inicio da execução para iniciar conexão com o servidor e antes de encerrar a execução, para avisar o servidor que ele está parando. Os pacotes são simples e contém 
+            apenas uma string escrito <i>Request</i> ou <i>Quit</i>, para iniciar e encerrar a conexão respectivamente.
+        </li></blockquote> </blockquote> </blockquote>
+        <blockquote> <blockquote><blockquote><li>O servidor envia pacotes para os clientes o tempo inteiro. Eles são strings no formato: "numero_de_sequência/pais0/pais1/pais2/pais3/pais4/pais5".
+         No qual, o primeiro campo representa o número da mensagem propriamente dita e os outros campos correspondem a quantidade, aleatória de 0 a 200, de crimes que 
+         ocorreram em um país num intervalo de tempo escolhido. Os campos se referem aos seguintes países, respectivamente: Brasil, EUA, Canadá, Arábia Saudita, 
+         África do Sul e Japão. 
+        </li></blockquote> </blockquote> </blockquote>
+            
+        
+        <h4>2.4. Algoritmos</h4>
+        <p class="recuo">Neste módulo encontra-se a descrição das principais partes dos algoritmos do cliente e do servidor.</p>
+        <h5>2.4.1 Cliente</h5>
+        <p class="recuo">
+            O cliente possui 2 threads no qual uma fica esperando o usuário teclar Enter para começar o encerramento do programa e envia ao servidor um aviso. A outra fica em loop
+            recebendo dados do servidor e faz a computação. A computação consiste em imprimir na tela a quantidade de crimes que ocorreram na região escolhida pelo usuário.
+            Além disso, o cliente calcula e apresenta ao final da execução do programa as seguintes informações: quantidade de pacotes esperados, total de pacotes recebidos, pacotes que chegaram atrasados,
+            que chegaram fora de ordem e o numero total de crimes que ocorreram durante a execução do programa no país escolhido.
+        </p>
+        <p class="recuo">
+            Além disso, o cliente possui um timeout de 1.5 segundos, de modo que se um pacote demorar mais que o timeout, ele será descartado e marcado como atrasado. Por causa
+            deste timeout, o intervalo máximo em milissegundos do envio do servidor foi definido como 1500. Se for maior que isso, nenhum pacote chegará antes do timeout do cliente.
+        </p>
+        <h5>2.4.2 Servidor</h5>
+        <p class="recuo">
+            O servidor, assim como o cliente, possui 2 threads no qual uma fica esperando mensagens do cliente e faz a interação desejada que pode ser adicionar ou remover o cliente em questão 
+            à lista de clientes, mantendo-a atualizada. A outra gera os dados e os envia aos clientes da lista. 
+        </p>        
+        <h3>3. Resultados e Discussões</h3>
+        <h4>3.1 Dificuldades Encontradas</h4>
+        <p class="recuo">
+            O principal desafio para o grupo foi no inicio do projeto. A ideia era utilizar uma API que fornece dados reais do Brasil a respeito de crimes reportados na policia. Entretanto, não foi encontrada nenhuma API
+             com esta finalidade no território brasileiro. Mas, buscando melhor na internet encontrou-se a Data Police API. No qual constam dados reais a respeito de crimes ocorridos na Inglaterra, País de Gales e Irlanda do Norte.
+            Ela contém tudo o que precisamos e muito mais. Em contrapartida, não pode ser usada como Stream pelo fato de não atualizar as informações em tempo real. Com o objetivo de permanecer com este tema,
+            encontramos como alternativa gerar dados fictícios e fazer as operações que eram a nossa ideia desde o princípio.<br>
+            <p class="recuo">Outro desafio foi utilizar a linguagem Python, pois nenhum dos membros se aprofundaram ou lembravam dela. Apesar disso, ela mostrou-se muito intuitiva e fácil de usar.</p> 
+        </p> 
+        <h4>3.2 Bug</h4>
+        <p class="recuo">Os bugs encontrados no trabalho foram:</p>
+        <blockquote> <blockquote><blockquote><li>Na execução do cliente, quando é solicitado um número do país é obrigatório ser um número, senão acontecerá erro ao converter uma entrada não numérica para int.</li></blockquote> </blockquote> </blockquote>
+        <blockquote> <blockquote><blockquote><li>O servidor precisa de dois ctrl-C ou ctrl-Z para finalizar.</li></blockquote></blockquote></blockquote>
+        <h4>3.3 Visão Geral</h4>
+            <p class="recuo">Este foi um trabalho muito interessante de desenvolver pois além de aprimorar as habilidades em programação e aprender uma nova linguagem, ele possibilitou trazer o que foi
+            aprendido em sala de aula para um uso na vida real. Outro ponto positivo foi o fato de o tema ser livre, pois possibilitou a escolha de um assunto interessante e que no futuro pode
+            evoluir a um aplicativo e ajudar pessoas a terem acesso a dados de crimes em locais específicos de modo fácil. 
+            </p>
+
+    </div>
+</div>
+
