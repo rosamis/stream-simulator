@@ -1,0 +1,138 @@
+===================================================================================================================================
+Inicio da execuçao: Cliente envia requisição para o servidor, que mandará dados sobre crimes em diversos países via streaming por UDP
+Restriçoes: -Deve ser executado com python3
+            -Deve ser executado depois do servidor
+Alunos: Matheus Yukio Lopes Shimazu - GRR20171625
+        Roberta Samistraro Tomigian - GRR20171631
+Professor: Elias    -    Disciplina: Redes de Computadores II
+Data da ultima atualizaçao: 07/06/19
+===================================================================================================================================
+Digite o nome da máquina do servidor: h31
+Digite o número da porta usada pelo servidor: 6000
+
+
+Escolha um dentre os seguintes países para descobrir a quantidade de crimes:
+   0 - Brasil
+   1 - Estados Unidos da América
+   2 - Canadá
+   3 - Arábia Saudita
+   4 - África do Sul
+   5 - Japão
+Selecione o país por seu respectivo número: 2
+
+['6', '34', '33', '4', '43', '25', '96']
+Número de ocorrências em Canadá no instante 6 foi 4
+
+
+
+['7', '77', '39', '148', '146', '7', '37']
+Número de ocorrências em Canadá no instante 7 foi 148
+
+
+
+['8', '78', '164', '183', '66', '163', '40']
+Número de ocorrências em Canadá no instante 8 foi 183
+
+
+
+['9', '179', '162', '56', '125', '153', '141']
+Número de ocorrências em Canadá no instante 9 foi 56
+
+
+
+PACOTE ERRADO RECEBIDO
+['11', '94', '122', '145', '30', '179', '5']
+Número de ocorrências em Canadá no instante 11 foi 145
+
+
+
+['12', '27', '73', '180', '118', '119', '4']
+Número de ocorrências em Canadá no instante 12 foi 180
+
+
+
+['13', '62', '41', '143', '133', '37', '148']
+Número de ocorrências em Canadá no instante 13 foi 143
+
+
+
+['14', '44', '184', '95', '76', '182', '153']
+Número de ocorrências em Canadá no instante 14 foi 95
+
+
+
+PACOTE ERRADO RECEBIDO
+['16', '196', '148', '183', '111', '164', '34']
+Número de ocorrências em Canadá no instante 16 foi 183
+
+
+
+['17', '152', '134', '179', '56', '29', '109']
+Número de ocorrências em Canadá no instante 17 foi 179
+
+
+
+['18', '188', '15', '184', '10', '111', '189']
+Número de ocorrências em Canadá no instante 18 foi 184
+
+
+
+['19', '105', '26', '161', '110', '84', '72']
+Número de ocorrências em Canadá no instante 19 foi 161
+
+
+
+PACOTE ERRADO RECEBIDO
+['21', '2', '179', '64', '190', '94', '4']
+Número de ocorrências em Canadá no instante 21 foi 64
+
+
+
+['22', '25', '186', '182', '60', '113', '176']
+Número de ocorrências em Canadá no instante 22 foi 182
+
+
+
+['23', '2', '83', '40', '113', '108', '136']
+Número de ocorrências em Canadá no instante 23 foi 40
+
+
+
+['24', '68', '119', '148', '120', '158', '48']
+Número de ocorrências em Canadá no instante 24 foi 148
+
+
+
+PACOTE ERRADO RECEBIDO
+['26', '148', '14', '42', '131', '73', '174']
+Número de ocorrências em Canadá no instante 26 foi 42
+
+
+
+['27', '187', '9', '144', '41', '127', '59']
+Número de ocorrências em Canadá no instante 27 foi 144
+
+
+
+['28', '23', '6', '7', '115', '112', '43']
+Número de ocorrências em Canadá no instante 28 foi 7
+
+
+
+['29', '89', '21', '22', '134', '13', '200']
+Número de ocorrências em Canadá no instante 29 foi 22
+
+
+
+Encerramento da conexão requisitado, aguarde ...
+Conexão encerrada com sucesso
+
+ESTATÍSTICAS:
+              Pacotes esperados       -> 20 pacotes
+              Pacotes recebidos       -> 20 pacotes
+              Pacotes atrasados       -> 0 pacotes
+              Pacotes em ordem errada -> 4 pacotes
+
+Número de ocorrências em Canadá desde o começo da execuçao do cliente: 2310 ocorrências.
+Programa encerrado com sucesso
+
