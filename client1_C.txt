@@ -1,0 +1,107 @@
+===================================================================================================================================
+Inicio da execuçao: Cliente envia requisição para o servidor, que mandará dados sobre crimes em diversos países via streaming por UDP
+Restriçoes: -Deve ser executado com python3
+            -Deve ser executado depois do servidor
+Alunos: Matheus Yukio Lopes Shimazu - GRR20171625
+        Roberta Samistraro Tomigian - GRR20171631
+Professor: Elias    -    Disciplina: Redes de Computadores II
+Data da ultima atualizaçao: 07/06/19
+===================================================================================================================================
+Digite o nome da máquina do servidor: h31
+Digite o número da porta usada pelo servidor: 6000
+
+
+Escolha um dentre os seguintes países para descobrir a quantidade de crimes:
+   0 - Brasil
+   1 - Estados Unidos da América
+   2 - Canadá
+   3 - Arábia Saudita
+   4 - África do Sul
+   5 - Japão
+Selecione o país por seu respectivo número: 3
+
+['12', '27', '73', '180', '118', '119', '4']
+Número de ocorrências em Arábia Saudita no instante 12 foi 118
+
+
+
+['13', '62', '41', '143', '133', '37', '148']
+Número de ocorrências em Arábia Saudita no instante 13 foi 133
+
+
+
+['14', '44', '184', '95', '76', '182', '153']
+Número de ocorrências em Arábia Saudita no instante 14 foi 76
+
+
+
+PACOTE ERRADO RECEBIDO
+['16', '196', '148', '183', '111', '164', '34']
+Número de ocorrências em Arábia Saudita no instante 16 foi 111
+
+
+
+['17', '152', '134', '179', '56', '29', '109']
+Número de ocorrências em Arábia Saudita no instante 17 foi 56
+
+
+
+['18', '188', '15', '184', '10', '111', '189']
+Número de ocorrências em Arábia Saudita no instante 18 foi 10
+
+
+
+['19', '105', '26', '161', '110', '84', '72']
+Número de ocorrências em Arábia Saudita no instante 19 foi 110
+
+
+
+PACOTE ERRADO RECEBIDO
+['21', '2', '179', '64', '190', '94', '4']
+Número de ocorrências em Arábia Saudita no instante 21 foi 190
+
+
+
+['22', '25', '186', '182', '60', '113', '176']
+Número de ocorrências em Arábia Saudita no instante 22 foi 60
+
+
+
+['23', '2', '83', '40', '113', '108', '136']
+Número de ocorrências em Arábia Saudita no instante 23 foi 113
+
+
+
+['24', '68', '119', '148', '120', '158', '48']
+Número de ocorrências em Arábia Saudita no instante 24 foi 120
+
+
+
+PACOTE ERRADO RECEBIDO
+['26', '148', '14', '42', '131', '73', '174']
+Número de ocorrências em Arábia Saudita no instante 26 foi 131
+
+
+
+['27', '187', '9', '144', '41', '127', '59']
+Número de ocorrências em Arábia Saudita no instante 27 foi 41
+
+
+
+['28', '23', '6', '7', '115', '112', '43']
+Número de ocorrências em Arábia Saudita no instante 28 foi 115
+
+
+
+Encerramento da conexão requisitado, aguarde ...
+Conexão encerrada com sucesso
+
+ESTATÍSTICAS:
+              Pacotes esperados       -> 14 pacotes
+              Pacotes recebidos       -> 14 pacotes
+              Pacotes atrasados       -> 0 pacotes
+              Pacotes em ordem errada -> 3 pacotes
+
+Número de ocorrências em Arábia Saudita desde o começo da execuçao do cliente: 1384 ocorrências.
+Programa encerrado com sucesso
+
